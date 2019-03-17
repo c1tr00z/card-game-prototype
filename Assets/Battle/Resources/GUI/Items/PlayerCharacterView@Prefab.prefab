@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0901c7bd50a484f8c888c1183cc4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 410}
+  offset: {x: 0, y: 440}
   _healthSlider: {fileID: 114424240626157704}
   _healthText: {fileID: 114880729237119984}
   _armorText: {fileID: 114000183270976288}

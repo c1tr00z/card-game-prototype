@@ -1,49 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class Scenes : MonoBehaviour {
+public class Scenes : BehaviourSingleton<Scenes> {
 
     private SceneItem _currentSceneItem;
-    private Scene _currentScene;
 
-    private static Scenes _instance;
+    private void OnEnable() {
+        App.modulesLoaded += App_modulesLoaded;
+    }
 
-    public static Scenes instance {
-        get {
-            return _instance;
+    private void OnDisable() {
+        App.modulesLoaded -= App_modulesLoaded;
+    }
+
+    private void App_modulesLoaded() {
+        if (AppSettings.instance.startScene == null) {
+            return;
         }
-    }
-
-    void Awake() {
-        _instance = this;
-    }
-
-    void Start() {
         LoadScene(AppSettings.instance.startScene);
     }
 
-    public Scene LoadScene(SceneItem newScene) {
-        return LoadScene(newScene, null);
-    }
-
-    public Scene LoadScene(SceneItem newScene, params object[] param) {
-        if (_currentScene != null) {
-            Destroy(_currentScene.gameObject);
-        }
+    public void LoadScene(SceneItem newScene) {
 
         _currentSceneItem = newScene;
-        _currentScene = _currentSceneItem.GetScene();
-        _currentScene.name = _currentSceneItem.name;
-        _currentScene.transform.parent = transform;
-        _currentScene.transform.localScale = Vector3.one;
 
-        if (param != null && param.Length > 0) {
-            _currentScene.SendMessage("OnLoadParams", param, SendMessageOptions.DontRequireReceiver);
-        } else {
-            _currentScene.SendMessage("OnLoad", SendMessageOptions.DontRequireReceiver);
-        }
+        SceneManager.LoadScene(_currentSceneItem.name, LoadSceneMode.Single);
+    }
+
+    public void LoadSceneAsync(SceneItem newScene) {
+        StartCoroutine(C_LoadSceneAsync(newScene));
+    }
+
+    public IEnumerator C_LoadSceneAsync(SceneItem newScene) {
         
+        _currentSceneItem = newScene;
 
-        return _currentScene;
+        var asyncOperation = SceneManager.LoadSceneAsync(_currentSceneItem.name);
+
+        while (asyncOperation.isDone) {
+            yield return 0;
+        }
     }
 }

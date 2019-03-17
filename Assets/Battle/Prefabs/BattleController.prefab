@@ -115,6 +115,7 @@ MonoBehaviour:
   _charactersSpots:
   - {fileID: 114353793896988946}
   - {fileID: 114692590985709806}
+  _battleFrame: {fileID: 11400000, guid: 43349b50dd7924041a057ad50850bc6f, type: 2}
   _winnerFrame: {fileID: 11400000, guid: 96a546422ce3ed74e8c3f6a691de79df, type: 2}
 --- !u!114 &114353793896988946
 MonoBehaviour:

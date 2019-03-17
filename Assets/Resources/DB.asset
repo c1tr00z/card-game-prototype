@@ -28,6 +28,7 @@ MonoBehaviour:
   - GUI/Frames/BattleFrame
   - GUI/Items/OpponentCharacterView
   - GUI/Items/PlayerCharacterView
+  - MainScene
   - Mechanics/AttackMechanic
   - Mechanics/DefenceMechanic
   - Modules/MechanicsController
@@ -43,5 +44,4 @@ MonoBehaviour:
   - PlayerCharacter@Deck
   - Scenes/TestScene
   - StartFrame
-  - StartScene
   - UI/TestMenu

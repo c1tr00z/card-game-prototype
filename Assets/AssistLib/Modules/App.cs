@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class App : BehaviourSingleton<App> {
 
+
+    public static event System.Action modulesLoaded;
+
     private Dictionary<AppModule, GameObject> _appModules;
     private Dictionary<GameModule, GameObject> _gameModules;
 
@@ -11,6 +14,8 @@ public class App : BehaviourSingleton<App> {
     private Transform _gameModulesContainer;
 
     IEnumerator Start() {
+
+        DontDestroyOnLoad(gameObject);
         
         var gameModules = DB.GetAll<GameModule>().SelectNotNull().ToList();
         gameModules.Sort(new System.Comparison<GameModule>((m1, m2) => {
@@ -18,6 +23,8 @@ public class App : BehaviourSingleton<App> {
         }));
         yield return StartCoroutine(C_InitAppModules());
         yield return StartCoroutine(C_InitGameModules());
+
+        modulesLoaded.SafeInvoke();
     }
 
     IEnumerator C_InitAppModules() {

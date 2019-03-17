@@ -13,6 +13,9 @@ namespace c1tr00z.CardPrototype.Battle {
         private BattleCharacterSpot[] _charactersSpots;
 
         [SerializeField]
+        private UIFrameItem _battleFrame;
+
+        [SerializeField]
         private UIFrameItem _winnerFrame;
         
         public List<CharacterBase> characters { get; private set; }
@@ -31,6 +34,7 @@ namespace c1tr00z.CardPrototype.Battle {
                 yield return null;
             }
             InitCharacters();
+            UI.instance.Show(_battleFrame);
         }
 
         private void InitCharacters() {

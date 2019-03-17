@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1012eab72caf5f49a62e5567e354133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 410}
+  offset: {x: 0, y: 440}
   _healthSlider: {fileID: 114221113143570364}
   _healthText: {fileID: 114731600091921212}
   _armorText: {fileID: 114019437844349936}
