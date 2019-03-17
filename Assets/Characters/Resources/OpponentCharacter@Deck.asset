@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afc47cee42c1234992ea0db62fdb12c, type: 3}
+  m_Name: OpponentCharacter@Deck
+  m_EditorClassIdentifier: 
+  cardChances:
+  - card: {fileID: 11400000, guid: 727974316a208644ba70748dbe6f969b, type: 2}
+    chance: 1
+  - card: {fileID: 11400000, guid: 28016d0bb2e794543b6b29e215dcbb15, type: 2}
+    chance: 0.6
+  - card: {fileID: 11400000, guid: 83dcade5f999fd04881ed50640e02d35, type: 2}
+    chance: 0.3
+  - card: {fileID: 11400000, guid: 082d098a23572994587dc6f082f6fda6, type: 2}
+    chance: 1
+  - card: {fileID: 11400000, guid: c5e3d6446e34f3c4c94eadccae88fea8, type: 2}
+    chance: 0.5
+  - card: {fileID: 11400000, guid: d222b41c8a3fb004d80a4a9da4341ae6, type: 2}
+    chance: 0.3
+  - card: {fileID: 11400000, guid: dc3459820bfad1148bf83861f6d34bed, type: 2}
+    chance: 1
+  - card: {fileID: 11400000, guid: 0c8edf7b53cc6ba4fa2f7aa7582ab236, type: 2}
+    chance: 0.5
+  - card: {fileID: 11400000, guid: 33834fc9f5d53934491708f884cce3a4, type: 2}
+    chance: 0.3

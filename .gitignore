@@ -1,0 +1,7 @@
+.vs/
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+card-game-prototype.sln
+obj/
+Library/
+Temp/
