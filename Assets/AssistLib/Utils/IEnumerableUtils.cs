@@ -2,20 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public static class IEnumerableUtils {
     
     public static T RandomItem<T>(this IEnumerable<T> items) {
-
-        //var array = items.ToArray();
-
-        //var random = new System.Random();//Random.Range(0, array.Length));
-
-        //var a = random.Next(0, array.Length);
-
-        //Debug.LogError(a);
-
-        //return array[a];
 
         T[] array;
         if (items is T[]) {
@@ -25,11 +16,7 @@ public static class IEnumerableUtils {
             list.AddRange(items);
             array = list.ToArray();
         }
-        var randomized = Random.Range(0, array.Length - 1);
-        //if (array.Length == 0) {
-        //    return default(T);
-        //}
-        Debug.Log(array.Length + " / " + randomized);
+        var randomized = UnityEngine.Random.Range(0, array.Length - 1);
         return array[randomized];
     }
 
@@ -156,5 +143,16 @@ public static class IEnumerableUtils {
 
     public static bool All<T>(this IEnumerable<T> enumerable, System.Func<T, bool> predicate) {
         return System.Linq.Enumerable.All(enumerable, predicate);
+    }
+
+    public static IEnumerable<T> SubArray<T>(this IEnumerable<T> enumerable, int index) {
+        var length = enumerable.Count() - index;
+        return SubArray(enumerable, index, length);
+    }
+
+    public static IEnumerable<T> SubArray<T>(this IEnumerable<T> enumerable, int index, int length) {
+        T[] result = new T[length];
+        Array.Copy(enumerable.ToArray(), index, result, 0, length);
+        return result;
     }
 }

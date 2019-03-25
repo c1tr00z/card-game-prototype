@@ -54,10 +54,11 @@ GameObject:
   m_Component:
   - component: {fileID: 224426502046649138}
   - component: {fileID: 222460773946263110}
-  - component: {fileID: 114526428387417464}
   - component: {fileID: 114249652497166316}
   - component: {fileID: 114023265469356586}
   - component: {fileID: 114216542592374514}
+  - component: {fileID: 114855221493724394}
+  - component: {fileID: 114851238467336020}
   m_Layer: 5
   m_Name: CardListItem
   m_TagString: Untagged
@@ -244,7 +245,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114526428387417464}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114526428387417464
+--- !u!114 &114851238467336020
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,25 +312,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420120089509684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 634ffdc98718a85498404cebad0c8bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _originBounds: {x: 100, y: 100}
+  _roundRadius: 12
+  _roundVerticles: 3
+--- !u!114 &114855221493724394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420120089509684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a373be43b5f90684485b052fe58ef2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  _randomVertexColor: 0
+  _innerEdgeWidth: 0
+  _sliced: 1
+  _sprite: {fileID: 0}
+  usePivot: 0
 --- !u!222 &222127192645133754
 CanvasRenderer:
   m_ObjectHideFlags: 1
