@@ -23,6 +23,7 @@ MonoBehaviour:
   - Cards/Defence_2
   - Cards/Defence_3
   - DB
+  - English
   - GameScene
   - GUI/Frames/BattleEndFrame
   - GUI/Frames/BattleFrame
@@ -42,6 +43,7 @@ MonoBehaviour:
   - OpponentCharacter@Deck
   - PlayerCharacter
   - PlayerCharacter@Deck
+  - Russian
   - Scenes/TestScene
   - StartFrame
   - UI/TestMenu
