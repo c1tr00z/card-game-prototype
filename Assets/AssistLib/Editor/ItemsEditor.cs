@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
 public class ItemsEditor {
 
@@ -22,12 +21,15 @@ public class ItemsEditor {
         AssetDatabase.CreateAsset(item, assetPathAndName);
 
         AssetDatabase.SaveAssets();
+
+        CollectItems();
+
         Selection.activeObject = item;
     }
      
     public static T CreateOrGetItem<T>(string path, string name) where T : DBEntry {
 
-        Debug.LogError(name);
+        Debug.Log(name);
 
         if (path == "") {
             path = "Assets";
@@ -36,7 +38,7 @@ public class ItemsEditor {
         }
 
         var pathDir = new DirectoryInfo(Path.Combine(Application.dataPath, path.Replace("Assets\\", "").Replace("Assets/", "")));
-        Debug.LogError(pathDir.ToString());
+        Debug.Log(pathDir.ToString());
         if (!pathDir.Exists) {
             pathDir.Create();
         }
@@ -44,13 +46,13 @@ public class ItemsEditor {
         var item = DB.Get<T>(name);
         if (item == null) {
             item = ScriptableObject.CreateInstance<T>();
+            
+            string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, name) + ".asset");
+
+            AssetDatabase.CreateAsset(item, assetPathAndName);
+
+            AssetDatabase.SaveAssets();
         }
-
-        string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, name) + ".asset");
-
-        AssetDatabase.CreateAsset(item, assetPathAndName);
-
-        AssetDatabase.SaveAssets();
 
         return item;
     }
