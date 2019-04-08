@@ -18,8 +18,11 @@ public class DB : DBEntry {
         } else {
             _instance._items.Clear();
         }
-        _instance.paths.ForEach(path => {
-            _instance._items.Add(Resources.Load<DBEntry>(path), path);
+        _instance.paths.SelectNotNull().ForEach(path => {
+            var dbItem = Resources.Load<DBEntry>(path);
+            if (dbItem != null) {
+                _instance._items.Add(dbItem, path);
+            }
         });
     }
 
