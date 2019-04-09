@@ -646,7 +646,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224619882991731472, guid: 3e02841ec1bcf6b4aa68d45124c94625,
     type: 2}
   m_PrefabInternal: {fileID: 1437156550}
---- !u!1001 &1569000242
+--- !u!1001 &1460404355
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -743,6 +743,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224549269113324070, guid: 0062a16ec8b6b8544a9555c52b7bffb5,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0062a16ec8b6b8544a9555c52b7bffb5, type: 2}
   m_IsPrefabAsset: 0
@@ -750,7 +755,7 @@ Prefab:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224088777822356572, guid: 0062a16ec8b6b8544a9555c52b7bffb5,
     type: 2}
-  m_PrefabInternal: {fileID: 1569000242}
+  m_PrefabInternal: {fileID: 1460404355}
 --- !u!1001 &1705225466
 Prefab:
   m_ObjectHideFlags: 0
