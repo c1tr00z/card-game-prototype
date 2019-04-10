@@ -60,6 +60,7 @@ namespace c1tr00z.CardPrototype.Battle.GUI {
 
         public void EndTurn() {
             TurnController.instance.turnControllers.Select(tc => tc as PlayerTurnController).First().EndTurn();
+            Debug.LogError((transform as RectTransform).rect);
         }
     }
 }

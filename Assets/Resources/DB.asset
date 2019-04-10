@@ -32,6 +32,8 @@ MonoBehaviour:
   - GUI/Items/PlayerCharacterView
   - Languages/English
   - Languages/Russian
+  - Layers/DefaultLayer
+  - Layers/MainLayer
   - MainScene
   - Mechanics/AttackMechanic
   - Mechanics/DefenceMechanic
@@ -49,3 +51,4 @@ MonoBehaviour:
   - Scenes/TestScene
   - StartFrame
   - UI/TestMenu
+  - UIDefaults

@@ -1,4 +1,5 @@
-﻿using c1tr00z.CardPrototype.Cards.Mechanics;
+﻿using c1tr00z.AssistLib.UI;
+using c1tr00z.CardPrototype.Cards.Mechanics;
 using c1tr00z.CardPrototype.Characters;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,10 +14,10 @@ namespace c1tr00z.CardPrototype.Battle {
         private BattleCharacterSpot[] _charactersSpots;
 
         [SerializeField]
-        private UIFrameItem _battleFrame;
+        private UIFrameDBEntry _battleFrame;
 
         [SerializeField]
-        private UIFrameItem _winnerFrame;
+        private UIFrameDBEntry _winnerFrame;
         
         public List<CharacterBase> characters { get; private set; }
 

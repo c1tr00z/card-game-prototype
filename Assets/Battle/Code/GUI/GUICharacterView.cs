@@ -44,11 +44,18 @@ namespace c1tr00z.CardPrototype.Battle.GUI {
             Follow();
         }
 
+        private void OnEnable() {
+            Follow();
+        }
+
         public void Start() {
             Follow();
         }
 
-        private void Follow() {
+        protected void Follow() {
+            if (character == null) {
+                return;
+            }
             var camera = Camera.allCameras.Where(c => (c.cullingMask & (1 << 5)) == 0).First();
 
             var cameraPosition = camera.WorldToScreenPoint(character.transform.position).ToVector2();
