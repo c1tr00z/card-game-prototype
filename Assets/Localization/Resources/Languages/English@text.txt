@@ -1,1 +1,1 @@
-{"MainMenu@Title":"Main menu","BattleFrame@Title":"ASD"}
+{"MainMenu@Title":"Main menu","BattleFrame@Title":"ASD","Attack_1@Title":"Light attack","Attack_1_Defence_1@Title":"Light attack and defence","Attack_1_Defence_2@Title":"Small attack and ok defence","Attack_2@Title":"Normal attack","Attack_2_Defence_1@Title":"Ok attack and weak defence","Attack_3@Title":"Heavy attack","Defence_1@Title":"Small defence","Defence_2@Title":"Normal defence","Defence_3@Title":"Heavy defence"}
