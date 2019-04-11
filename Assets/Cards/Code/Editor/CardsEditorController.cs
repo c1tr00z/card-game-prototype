@@ -11,6 +11,8 @@ namespace c1tr00z.CardPrototype.Cards {
 
         private List<CardDBEntry> _cards;
 
+        public CardDBEntry selectedCard;
+
         public List<CardDBEntry> cards {
             get { return _cards; }
         }
@@ -43,6 +45,22 @@ namespace c1tr00z.CardPrototype.Cards {
             ItemsEditor.CollectItems();
             AssetDatabase.SaveAssets();
             cardRemoved.SafeInvoke();
+        }
+
+        public void UpdateSelectedCardSprite() {
+            if (selectedCard == null) {
+                return;
+            }
+            var sprite = EditorGUIUtility.GetObjectPickerObject() as Sprite;
+            if (sprite == null) {
+                return;
+            }
+            var cardSprite = selectedCard.Load<UISpriteItem>("Icon");
+            if (cardSprite == null) {
+                return;
+            }
+            cardSprite.sprite = sprite;
+            EditorUtility.SetDirty(cardSprite);
         }
     }
 }

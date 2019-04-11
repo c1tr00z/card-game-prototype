@@ -66,6 +66,10 @@ namespace c1tr00z.CardPrototype.Cards {
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.EndScrollView();
+
+            if (Event.current.commandName == "ObjectSelectorUpdated") {
+                OnObjectSelectorUpdated();
+            }
         }
 
         private void DrawPagination() {
@@ -116,6 +120,10 @@ namespace c1tr00z.CardPrototype.Cards {
                 ? _controller.cards.Count
                 : Mathf.Min(_itemsOnPage, _controller.cards.Count - _itemsOnPage * _page);
             _currentCards = _controller.cards.GetRange(_page * _itemsOnPage, itemsCountOnCurrentPage);
+        }
+
+        private void OnObjectSelectorUpdated() {
+            _controller.UpdateSelectedCardSprite();
         }
     }
 }

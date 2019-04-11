@@ -14,7 +14,15 @@ namespace c1tr00z.CardPrototype.Cards {
             if (GUILayout.Button(cardDBEntry.name, GUILayout.Width(CardsEditorWindow.AVERAGE_BUTTON_WIDTH))) {
                 Selection.activeObject = cardDBEntry;
             }
-            GUILayout.Label("None", GUILayout.Width(CardsEditorWindow.ICON_WIDTH));
+            var sprite = cardDBEntry.Load<UISpriteItem>("Icon");
+            if (sprite != null) {
+                if (GUILayout.Button(sprite.sprite != null ? sprite.sprite.texture : null,
+                    GUILayout.Width(CardsEditorWindow.ICON_WIDTH), GUILayout.Height(CardsEditorWindow.ICON_WIDTH))) {
+                    controller.selectedCard = cardDBEntry;
+                    EditorGUIUtility.ShowObjectPicker<Sprite>(sprite.sprite, false, "t:Sprite", 0);
+                }
+            }
+            //GUILayout.Label("None", GUILayout.Width(CardsEditorWindow.ICON_WIDTH));
             GUILayout.Label(cardDBEntry.GetTitle(), GUILayout.Width(CardsEditorWindow.NAME_WIDTH));
             cardDBEntry.energyPrice = EditorGUILayout.IntField(cardDBEntry.energyPrice, GUILayout.Width(CardsEditorWindow.ENERGY_PRICE_WIDTH));
             DrawMechanicsBlock(cardDBEntry);
