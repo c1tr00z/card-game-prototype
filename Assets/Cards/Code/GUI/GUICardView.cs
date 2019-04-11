@@ -1,4 +1,5 @@
-﻿using c1tr00z.CardPrototype.Characters;
+﻿using c1tr00z.AssistLib.Localization;
+using c1tr00z.CardPrototype.Characters;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ namespace c1tr00z.CardPrototype.Cards.GUI {
         }
 
         private void UpdateView() {
-            _cardNameText.text = card.dbEntry.cardName;
+            _cardNameText.text = card.dbEntry.GetTitle();
             _cardPriceText.text = card.dbEntry.energyPrice.ToString();
             var iconItem = card.dbEntry.Load<UISpriteItem>("Icon");
             if (iconItem != null) {

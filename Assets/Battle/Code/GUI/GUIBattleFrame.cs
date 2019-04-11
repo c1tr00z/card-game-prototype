@@ -1,4 +1,5 @@
-﻿using c1tr00z.CardPrototype.Cards;
+﻿using c1tr00z.AssistLib.Localization;
+using c1tr00z.CardPrototype.Cards;
 using c1tr00z.CardPrototype.Characters;
 using System.Collections;
 using UnityEngine;
@@ -55,7 +56,7 @@ namespace c1tr00z.CardPrototype.Battle.GUI {
             card.dbEntry.mechanics.ForEach(m => cardTextString += (string.Format(m.mechanic.mechanicsText, m.param) + ";\r\n"));
             _lastActionText.text = string.Format("<color=#{0}>{1}</color> played: {2}\\\\ \r\n {3}", 
                 ColorUtility.ToHtmlStringRGB(character.dbEntry.color),
-                character.dbEntry.characterPlayerName, card.dbEntry.cardName, cardTextString);
+                character.dbEntry.characterPlayerName, card.dbEntry.GetTitle(), cardTextString);
         }
 
         public void EndTurn() {

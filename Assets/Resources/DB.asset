@@ -24,6 +24,7 @@ MonoBehaviour:
   - Cards/Defence_3
   - DB
   - Documents/Localization
+  - Documents/Pages/LocalizationPageCards
   - Documents/Pages/LocalizationPageGUI
   - GameScene
   - GUI/Frames/BattleEndFrame
