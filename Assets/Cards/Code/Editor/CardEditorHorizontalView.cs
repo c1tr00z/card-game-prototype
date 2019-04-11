@@ -5,9 +5,13 @@ using UnityEngine;
 namespace c1tr00z.CardPrototype.Cards {
     public static class CardEditorHorizontalView {
 
-        public static void DrawCardGUI(CardDBEntry cardDBEntry) {
+        public static void DrawCardGUI(CardsEditorController controller, CardDBEntry cardDBEntry) {
             EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button(cardDBEntry.name, GUILayout.Width(CardsEditorWindow.SELECTOR_WIDTH))) {
+            if (GUILayout.Button("X", GUILayout.Width(CardsEditorWindow.SMALL_BUTTON_WIDTH))) {
+                controller.RemoveCard(cardDBEntry);
+                return;
+            }
+            if (GUILayout.Button(cardDBEntry.name, GUILayout.Width(CardsEditorWindow.AVERAGE_BUTTON_WIDTH))) {
                 Selection.activeObject = cardDBEntry;
             }
             GUILayout.Label("None", GUILayout.Width(CardsEditorWindow.ICON_WIDTH));
@@ -22,6 +26,11 @@ namespace c1tr00z.CardPrototype.Cards {
         }
 
         public static void DrawMechanicsBlock(CardDBEntry cardDBEntry) {
+            if (cardDBEntry.mechanics == null) {
+                cardDBEntry.mechanics = new Mechanics.CardMechanicsEntry[0];
+                EditorUtility.SetDirty(cardDBEntry);
+                return;
+            }
             EditorGUILayout.BeginVertical();
             if (GUILayout.Button("+", GUILayout.Width(50))) {
                 var mechanicsList = cardDBEntry.mechanics.ToList();

@@ -11,7 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b168877b30ba9f242a98d3863d4d26a0, type: 3}
   m_Name: Defence_3
   m_EditorClassIdentifier: 
-  cardName: Heavy defence
   energyPrice: 3
   mechanics:
   - mechanic: {fileID: 11400000, guid: 34adfe321c55f5a4db6021c7b965afd2, type: 2}

@@ -6,16 +6,17 @@ using UnityEngine;
 namespace c1tr00z.CardPrototype.Cards {
     public class CardsEditorWindow : EditorWindow {
 
-        public static readonly int SELECTOR_WIDTH = 100;
         public static readonly int ICON_WIDTH = 100;
         public static readonly int NAME_WIDTH = 300;
         public static readonly int ENERGY_PRICE_WIDTH = 20;
         
         public static readonly int ITEMS_ON_PAGE_WIDTH = 300;
+        public static readonly int AVERAGE_BUTTON_WIDTH = 100;
         public static readonly int SMALL_BUTTON_WIDTH = 20;
         public static readonly int PAGE_LABEL_WIDTH = 100;
 
-        private List<CardDBEntry> _cards;
+        private CardsEditorController _controller;
+
         private List<CardDBEntry> _currentCards;
 
         private bool _usePagination;
@@ -24,6 +25,8 @@ namespace c1tr00z.CardPrototype.Cards {
 
         private Vector2 _scrollView;
 
+        private string _newCardName;
+
         [MenuItem("Card  Game/Edit Cards")]
         public static void ShowSettingsWindow() {
             var cardsWindow = (CardsEditorWindow)EditorWindow.GetWindow(typeof(CardsEditorWindow), true);
@@ -31,13 +34,21 @@ namespace c1tr00z.CardPrototype.Cards {
         }
 
         private void Load() {
-            _cards = DB.GetAll<CardDBEntry>().ToList();
-            _cards.Sort((c1, c2) => string.Compare(c1.name, c2.name));
+            _controller = new CardsEditorController();
+            CardsEditorController.cardAdded += RefreshList;
+            CardsEditorController.cardRemoved += RefreshList;
             RefreshList();
+        }
+
+        private void OnDestroy() {
+            CardsEditorController.cardAdded -= RefreshList;
+            CardsEditorController.cardRemoved -= RefreshList;
         }
 
         void OnGUI() {
             GUILayout.Label("Cards", EditorStyles.boldLabel);
+
+            DrawCreateCard();
 
             DrawPagination();
 
@@ -45,13 +56,13 @@ namespace c1tr00z.CardPrototype.Cards {
 
             EditorGUILayout.BeginVertical();
             EditorGUILayout.BeginHorizontal();
-            GUILayout.Label("#", EditorStyles.boldLabel, GUILayout.Width(SELECTOR_WIDTH));
+            GUILayout.Label("#", EditorStyles.boldLabel, GUILayout.Width(AVERAGE_BUTTON_WIDTH + SMALL_BUTTON_WIDTH));
             GUILayout.Label("Icon", EditorStyles.boldLabel, GUILayout.Width(ICON_WIDTH));
             GUILayout.Label("Name", EditorStyles.boldLabel, GUILayout.Width(NAME_WIDTH));
             GUILayout.Label("Energy price", EditorStyles.boldLabel, GUILayout.Width(ENERGY_PRICE_WIDTH));
             GUILayout.Label("Mechanics", EditorStyles.boldLabel);
             EditorGUILayout.EndHorizontal();
-            _currentCards.ForEach(c => CardEditorHorizontalView.DrawCardGUI(c));
+            _currentCards.ForEach(c => CardEditorHorizontalView.DrawCardGUI(_controller, c));
             EditorGUILayout.EndVertical();
 
             EditorGUILayout.EndScrollView();
@@ -69,7 +80,7 @@ namespace c1tr00z.CardPrototype.Cards {
                 }
                 GUILayout.Label("Page: " + _page, GUILayout.Width(PAGE_LABEL_WIDTH));
                 if (GUILayout.Button(">", GUILayout.Width(SMALL_BUTTON_WIDTH))) {
-                    var maxPage = _cards.Count / _itemsOnPage + (_cards.Count % _itemsOnPage > 0 ? 1 : 0);
+                    var maxPage = _controller.cards.Count / _itemsOnPage + (_controller.cards.Count % _itemsOnPage > 0 ? 1 : 0);
                     _page = _page < maxPage - 1 ? _page + 1 : _page;
                     RebuildList();
                 }
@@ -77,9 +88,19 @@ namespace c1tr00z.CardPrototype.Cards {
             }
         }
 
+        private void DrawCreateCard() {
+            EditorGUILayout.BeginHorizontal();
+            _newCardName = EditorGUILayout.TextField("New Card name", _newCardName, GUILayout.Width(NAME_WIDTH));
+            if (GUILayout.Button("Create", GUILayout.Width(AVERAGE_BUTTON_WIDTH))) {
+                _controller.CreateNewCard(_newCardName);
+                _newCardName = "";
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+
         private void RefreshList() {
             if (!_usePagination) {
-                _currentCards = _cards;
+                _currentCards = _controller.cards;
                 return;
             }
             _page = 0;
@@ -88,13 +109,13 @@ namespace c1tr00z.CardPrototype.Cards {
 
         private void RebuildList() {
             if (!_usePagination) {
-                _currentCards = _cards;
+                _currentCards = _controller.cards;
                 return;
             }
-            var itemsCountOnCurrentPage = _itemsOnPage > _cards.Count 
-                ? _cards.Count 
-                : Mathf.Min(_itemsOnPage, _cards.Count - _itemsOnPage * _page);
-            _currentCards = _cards.GetRange(_page * _itemsOnPage, itemsCountOnCurrentPage);
+            var itemsCountOnCurrentPage = _itemsOnPage > _controller.cards.Count() 
+                ? _controller.cards.Count
+                : Mathf.Min(_itemsOnPage, _controller.cards.Count - _itemsOnPage * _page);
+            _currentCards = _controller.cards.GetRange(_page * _itemsOnPage, itemsCountOnCurrentPage);
         }
     }
 }

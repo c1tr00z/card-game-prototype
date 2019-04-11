@@ -11,7 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b168877b30ba9f242a98d3863d4d26a0, type: 3}
   m_Name: Attack_2
   m_EditorClassIdentifier: 
-  cardName: Normal attack
   energyPrice: 3
   mechanics:
   - mechanic: {fileID: 11400000, guid: aedfbf720f36ea149bf3a5049774ae05, type: 2}
