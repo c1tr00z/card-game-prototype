@@ -81,6 +81,11 @@ namespace c1tr00z.CardPrototype.Characters {
             }
         }
 
+        public void Heal(int value) {
+            hp = hp + value <= initHP ? hp + value : initHP;
+            OnChanged();
+        }
+
         protected void DoActionAndSetChanged(System.Action action) {
             action.SafeInvoke();
             OnChanged();

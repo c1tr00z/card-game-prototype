@@ -38,6 +38,7 @@ MonoBehaviour:
   - MainScene
   - Mechanics/AttackMechanic
   - Mechanics/DefenceMechanic
+  - Mechanics/HealMechanic
   - Modules/MechanicsController
   - Modules/Saves
   - Modules/Saves/SavePlayerPrefs
