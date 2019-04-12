@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09de923ce9d25d4e9d2155ffc84aa16, type: 3}
   m_Name: Attack_2@Icon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3c26d0551f2937d4aac0f22ea558bc57, type: 3}
+  sprite: {fileID: 21300000, guid: 7fce1db73a0b5854c9e05a429965d1c7, type: 3}

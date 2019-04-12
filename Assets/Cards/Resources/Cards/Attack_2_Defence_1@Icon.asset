@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09de923ce9d25d4e9d2155ffc84aa16, type: 3}
   m_Name: Attack_2_Defence_1@Icon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: f223443b6fa6c234db42630acd60c2c4, type: 3}
+  sprite: {fileID: 21300000, guid: 73f7fa4cac27e6043a91b6fe49157e62, type: 3}
