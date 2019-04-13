@@ -17,6 +17,7 @@ MonoBehaviour:
   - Cards/Attack_1_Defence_1
   - Cards/Attack_1_Defence_2
   - Cards/Attack_2
+  - Cards/Attack_25
   - Cards/Attack_2_Defence_1
   - Cards/Attack_3
   - Cards/Defence_1
@@ -31,6 +32,8 @@ MonoBehaviour:
   - GUI/Frames/BattleFrame
   - GUI/Items/OpponentCharacterView
   - GUI/Items/PlayerCharacterView
+  - Import/BalanceDocument
+  - Import/BalanceDocumentCards
   - Languages/English
   - Languages/Russian
   - Layers/DefaultLayer

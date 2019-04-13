@@ -23,12 +23,8 @@ namespace c1tr00z.CardPrototype.Cards {
         }
 
         public void CreateNewCard(string newCardName) {
-            var path = PathUtils.Combine("Assets", "Cards", "Resources", "Cards");
-            var trueCardName = newCardName.Replace(" ", "");
-            var newCard = AssetDBUtils.CreateScriptableObject<CardDBEntry>(path, trueCardName);
+            var newCard = CardDBEntryUtils.CreateCardDBEntry(newCardName);
             AddNewCard(newCard);
-            var newCardIcon = AssetDBUtils.CreateScriptableObject<UISpriteItem>(path, string.Format("{0}@Icon", trueCardName));
-            ItemsEditor.CollectItems();
         }
 
         public void AddNewCard(CardDBEntry newCard) {

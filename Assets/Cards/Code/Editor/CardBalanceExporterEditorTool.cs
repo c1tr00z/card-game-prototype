@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace c1tr00z.CardPrototype.Cards {
-    [EditorToolName("Card balance exporter tool")]
+    [EditorToolName("Export card balance")]
     public class CardBalanceExporterEditorTool : EditorTool {
 
         protected override void DrawInterface() {
