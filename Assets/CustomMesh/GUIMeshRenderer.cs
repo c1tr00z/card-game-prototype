@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 
 namespace CustomMeshes {
-    public class GUIMeshRenderer : Graphic {
+    public class GUIMeshRenderer : MaskableGraphic {
 
         [SerializeField]
         private bool _randomVertexColor;

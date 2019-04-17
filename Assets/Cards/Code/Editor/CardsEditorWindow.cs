@@ -19,7 +19,7 @@ namespace c1tr00z.CardPrototype.Cards {
 
         private List<CardDBEntry> _currentCards;
 
-        private bool _usePagination;
+        private bool _usePagination = true;
         private int _page;
         private int _itemsOnPage = 10;
 
@@ -34,6 +34,10 @@ namespace c1tr00z.CardPrototype.Cards {
         }
 
         private void Load() {
+            var title = new GUIContent();
+            title.text = "Edit cards";
+            titleContent = title;
+
             _controller = new CardsEditorController();
             CardsEditorController.cardAdded += RefreshList;
             CardsEditorController.cardRemoved += RefreshList;
@@ -82,7 +86,7 @@ namespace c1tr00z.CardPrototype.Cards {
                     _page = _page > 0 ? _page - 1 : _page;
                     RebuildList();
                 }
-                GUILayout.Label("Page: " + _page, GUILayout.Width(PAGE_LABEL_WIDTH));
+                GUILayout.Label("Page: " + (_page + 1), GUILayout.Width(PAGE_LABEL_WIDTH));
                 if (GUILayout.Button(">", GUILayout.Width(SMALL_BUTTON_WIDTH))) {
                     var maxPage = _controller.cards.Count / _itemsOnPage + (_controller.cards.Count % _itemsOnPage > 0 ? 1 : 0);
                     _page = _page < maxPage - 1 ? _page + 1 : _page;
