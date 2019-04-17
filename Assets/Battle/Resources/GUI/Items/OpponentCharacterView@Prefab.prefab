@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 224042916720789714}
   - component: {fileID: 114320478352610784}
   - component: {fileID: 222472681107084230}
-  - component: {fileID: 114407305110515272}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -189,6 +188,7 @@ GameObject:
   - component: {fileID: 224512992527275684}
   - component: {fileID: 114574020089225870}
   - component: {fileID: 114473853350288302}
+  - component: {fileID: 114162217788805596}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -305,6 +305,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114162217788805596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783982465605642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a1f393b57783a4087acbc9e887f9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listItemSource: {fileID: 114640283379154718, guid: 0b16249a9ded5e04095abfb895adbfc3,
+    type: 2}
 --- !u!114 &114221113143570364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,24 +424,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114407305110515272
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1652260132287636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a1f393b57783a4087acbc9e887f9cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scrollRect: {fileID: 114320478352610784}
-  _listStartPoint: 0
-  listItemSource: {fileID: 114640283379154718, guid: 0b16249a9ded5e04095abfb895adbfc3,
-    type: 2}
-  _cellSize: {x: 0, y: 0}
-  _gridSize: {x: 0, y: 0}
-  _contentTransform: {fileID: 224512992527275684}
 --- !u!114 &114432494752416488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -643,7 +638,7 @@ MonoBehaviour:
   _healthSlider: {fileID: 114221113143570364}
   _healthText: {fileID: 114731600091921212}
   _armorText: {fileID: 114019437844349936}
-  _nextActionList: {fileID: 114407305110515272}
+  _nextActionList: {fileID: 114162217788805596}
 --- !u!222 &222163598816497132
 CanvasRenderer:
   m_ObjectHideFlags: 1
