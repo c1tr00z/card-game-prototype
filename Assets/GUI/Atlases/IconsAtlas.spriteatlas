@@ -37,20 +37,26 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c4a883d6e79a04e409af0ef7a045796f, type: 3}
   - {fileID: 21300000, guid: 7fce1db73a0b5854c9e05a429965d1c7, type: 3}
   - {fileID: 21300000, guid: 912acf69ab478944bbb97938b1324abf, type: 3}
+  - {fileID: 21300000, guid: d95e3fb9c21d4c6439b3b166d5ac4dc8, type: 3}
+  - {fileID: 21300000, guid: 60c4ca6a69404b84ab46a09967acbcb4, type: 3}
   - {fileID: 21300000, guid: 0a9c187a20c40a54cb971a6e5634dd73, type: 3}
   - {fileID: 21300000, guid: 6b37751c18c1bb64e90e0d394058a952, type: 3}
   - {fileID: 21300000, guid: 73f7fa4cac27e6043a91b6fe49157e62, type: 3}
   - {fileID: 21300000, guid: 03d1747df712b6f46b237165cb98cf23, type: 3}
+  - {fileID: 21300000, guid: 1be92bbf62927ac4e85ba1a9bc972a22, type: 3}
   - {fileID: 21300000, guid: 451350cf87df4c6418e70dc5afaa982a, type: 3}
   m_PackedSpriteNamesToIndex:
   - trident-shield
   - broken-shield
   - scalpel-strike
   - checked-shield
+  - hearts
+  - shield
   - bolt-shield
   - shield-echoes
   - winged-shield
   - bone-knife
+  - plain-dagger
   - assassin-pocket
   m_Tag: IconsAtlas
   m_IsVariant: 0
