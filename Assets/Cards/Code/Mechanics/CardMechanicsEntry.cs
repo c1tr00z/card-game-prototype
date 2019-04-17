@@ -7,5 +7,9 @@ namespace c1tr00z.CardPrototype.Cards.Mechanics {
     public class CardMechanicsEntry {
         public CardMechanicsDBEntry mechanic;
         public int param;
+
+        public string description {
+            get { return mechanic.GetDescription(param); }
+        }
     }
 }

@@ -26,6 +26,7 @@ MonoBehaviour:
   - Documents/Localization
   - Documents/Pages/LocalizationPageCards
   - Documents/Pages/LocalizationPageGUI
+  - Documents/Pages/LocalizationPageMechanics
   - GameScene
   - GUI/Frames/BattleEndFrame
   - GUI/Frames/BattleFrame
@@ -34,7 +35,9 @@ MonoBehaviour:
   - Import/BalanceDocument
   - Import/BalanceDocumentCards
   - Languages/English
+  - Languages/English 1
   - Languages/Russian
+  - Languages/Russian 1
   - Layers/DefaultLayer
   - Layers/MainLayer
   - MainScene

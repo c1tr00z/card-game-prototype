@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: AttackMechanic
   m_EditorClassIdentifier: 
   target: 1
-  mechanicsText: Deal {0} damage
+  color: {r: 0.5283019, g: 0.012459949, b: 0.012459949, a: 1}

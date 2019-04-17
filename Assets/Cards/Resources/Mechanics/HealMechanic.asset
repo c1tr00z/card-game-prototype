@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: HealMechanic
   m_EditorClassIdentifier: 
   target: 0
-  mechanicsText: Deal {0} damage
+  color: {r: 0, g: 0.41509432, b: 0.10797548, a: 1}

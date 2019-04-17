@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: DefenceMechanic
   m_EditorClassIdentifier: 
   target: 0
-  mechanicsText: Add {0} armor
+  color: {r: 0, g: 0.34061703, b: 0.49056602, a: 1}

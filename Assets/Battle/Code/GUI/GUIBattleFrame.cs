@@ -53,7 +53,7 @@ namespace c1tr00z.CardPrototype.Battle.GUI {
 
         private void Card_cardPlayed(Card card, CharacterBase character) {
             var cardTextString = "";
-            card.dbEntry.mechanics.ForEach(m => cardTextString += (string.Format(m.mechanic.mechanicsText, m.param) + ";\r\n"));
+            card.dbEntry.mechanics.ForEach(m => cardTextString += (m.description + ";\r\n"));
             _lastActionText.text = string.Format("<color=#{0}>{1}</color> played: {2}\\\\ \r\n {3}", 
                 ColorUtility.ToHtmlStringRGB(character.dbEntry.color),
                 character.dbEntry.characterPlayerName, card.dbEntry.GetTitle(), cardTextString);

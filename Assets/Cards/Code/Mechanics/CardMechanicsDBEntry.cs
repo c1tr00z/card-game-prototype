@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using c1tr00z.AssistLib.Localization;
 using UnityEngine;
 
 namespace c1tr00z.CardPrototype.Cards.Mechanics {
@@ -11,6 +10,10 @@ namespace c1tr00z.CardPrototype.Cards.Mechanics {
 
         public Target target;
 
-        public string mechanicsText;
+        public Color color = Color.white;
+
+        public string GetDescription(object param) {
+            return this.GetLocalizationText("Description", param);
+        }
     }
 }

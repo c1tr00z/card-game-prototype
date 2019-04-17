@@ -18,6 +18,9 @@ namespace c1tr00z.CardPrototype.Cards.GUI {
         [SerializeField]
         private Text _cardText;
 
+        [SerializeField]
+        private Graphic _back;
+
         private PlayerCharacter _player;
 
         public PlayerCharacter player {
@@ -50,7 +53,8 @@ namespace c1tr00z.CardPrototype.Cards.GUI {
             }
 
             var cardTextString = "";
-            card.dbEntry.mechanics.ForEach(m => cardTextString += (string.Format(m.mechanic.mechanicsText, m.param) + ";\r\n"));
+            card.dbEntry.mechanics.ForEach(m => cardTextString += (m.description + ";\r\n"));
+            _back.color = card.dbEntry.mechanics.MaxElement(m => m.param).mechanic.color;
             _cardText.text = cardTextString;
         }
 
