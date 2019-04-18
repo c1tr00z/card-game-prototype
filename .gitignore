@@ -5,3 +5,4 @@ card-game-prototype.sln
 obj/
 Library/
 Temp/
+Assets/Export/cardBalanceText.csv
