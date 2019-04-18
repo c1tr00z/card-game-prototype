@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.U2D;
 
 using System.Linq;
+using UnityEngine.Sprites;
 
 namespace CustomMeshes {
     public class GUIMeshRenderer : MaskableGraphic {
@@ -148,15 +150,21 @@ namespace CustomMeshes {
         }
 
         private UIVertex ProcessVertexBase(UIVertex vertex, int index) {
-
-            Vector2 uv = Vector2.zero;
+            
+            if (_sprite == null) {
+                return vertex;
+            }
 
             if (_innerEdgeWidth < 1) {
-                vertex.uv0 = provider.GetUV(index);
-            } else {
+                var spriteUV = DataUtility.GetOuterUV(_sprite);
+                var uvWidth = Mathf.Abs(spriteUV.z - spriteUV.x);
+                var uvHeight = Mathf.Abs(spriteUV.w - spriteUV.y);
+                var uv = provider.GetUV(index);
+                vertex.uv0 = new Vector2(spriteUV.x, spriteUV.y) + new Vector2(uvWidth * uv.x, uvHeight * uv.y);
+            } else {                                                                                    
                 System.Func<int, bool> isFirstIndex = i => index < _verticlesToRender.Length / 2;
 
-                vertex.uv0 = new Vector2(index % 2 == 0 ? 0 : 1, isFirstIndex(index) ? 1 : 0);
+                vertex.uv0 = _sprite.uv[0] + new Vector2(index % 2 == 0 ? 0 : 1, isFirstIndex(index) ? 1 : 0);
             }
 
             return vertex;
