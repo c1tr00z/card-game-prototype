@@ -5,7 +5,7 @@ SpriteAtlas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: IconsAtlas
+  m_Name: MainAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -19,7 +19,18 @@ SpriteAtlas:
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -29,34 +40,50 @@ SpriteAtlas:
       enableTightPacking: 0
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: 45196283bb43dc744a33cc9dd2116bd2, type: 3}
+    - {fileID: 102900000, guid: 98177fe3234b4094c829146ec3bd191c, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: b362952057e5a334a811672a687fcda0, type: 3}
+  - {fileID: 21300000, guid: eabe3a7008f276e48944197f8e2c4f67, type: 3}
   - {fileID: 21300000, guid: 987e8f826c01837439c8fae8d17feb2c, type: 3}
+  - {fileID: 21300000, guid: ae5e87b60c2659645896d3819c85ad7c, type: 3}
   - {fileID: 21300000, guid: c4a883d6e79a04e409af0ef7a045796f, type: 3}
   - {fileID: 21300000, guid: 7fce1db73a0b5854c9e05a429965d1c7, type: 3}
   - {fileID: 21300000, guid: 912acf69ab478944bbb97938b1324abf, type: 3}
   - {fileID: 21300000, guid: d95e3fb9c21d4c6439b3b166d5ac4dc8, type: 3}
+  - {fileID: 21300000, guid: f1120ff995fcf0e48bc702daa9db268e, type: 3}
   - {fileID: 21300000, guid: 60c4ca6a69404b84ab46a09967acbcb4, type: 3}
   - {fileID: 21300000, guid: 0a9c187a20c40a54cb971a6e5634dd73, type: 3}
+  - {fileID: 21300000, guid: 64a20b7a7a7a0d0408b0f7f016e793f7, type: 3}
+  - {fileID: 21300000, guid: a382efbbebbc0d046ac484376b2d2f13, type: 3}
   - {fileID: 21300000, guid: 6b37751c18c1bb64e90e0d394058a952, type: 3}
   - {fileID: 21300000, guid: 73f7fa4cac27e6043a91b6fe49157e62, type: 3}
+  - {fileID: 21300000, guid: 7a912e8cb1625ba4ab749f312c7d8aa8, type: 3}
+  - {fileID: 21300000, guid: c7f059cc12a42c145bf7186551d63aea, type: 3}
   - {fileID: 21300000, guid: 03d1747df712b6f46b237165cb98cf23, type: 3}
   - {fileID: 21300000, guid: 1be92bbf62927ac4e85ba1a9bc972a22, type: 3}
   - {fileID: 21300000, guid: 451350cf87df4c6418e70dc5afaa982a, type: 3}
   m_PackedSpriteNamesToIndex:
+  - hand-bandage
+  - pretty-fangs
   - trident-shield
+  - fangs
   - broken-shield
   - scalpel-strike
   - checked-shield
   - hearts
+  - Blank
   - shield
   - bolt-shield
+  - remedy
+  - overdose
   - shield-echoes
   - winged-shield
+  - neck-bite
+  - gradient
   - bone-knife
   - plain-dagger
   - assassin-pocket
-  m_Tag: IconsAtlas
+  m_Tag: MainAtlas
   m_IsVariant: 0
