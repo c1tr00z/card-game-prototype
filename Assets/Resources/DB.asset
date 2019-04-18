@@ -22,6 +22,12 @@ MonoBehaviour:
   - Cards/Defence_1
   - Cards/Defence_2
   - Cards/Defence_3
+  - Cards/Heal_1
+  - Cards/Heal_2
+  - Cards/Heal_3
+  - Cards/Vampire_1
+  - Cards/Vampire_2
+  - Cards/Vampire_3
   - DB
   - Documents/Localization
   - Documents/Pages/LocalizationPageCards
@@ -35,9 +41,7 @@ MonoBehaviour:
   - Import/BalanceDocument
   - Import/BalanceDocumentCards
   - Languages/English
-  - Languages/English 1
   - Languages/Russian
-  - Languages/Russian 1
   - Layers/DefaultLayer
   - Layers/MainLayer
   - MainScene
