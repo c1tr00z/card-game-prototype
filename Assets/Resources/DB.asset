@@ -36,6 +36,8 @@ MonoBehaviour:
   - GameScene
   - GUI/Frames/BattleEndFrame
   - GUI/Frames/BattleFrame
+  - GUI/Frames/MainMenuFrame
+  - GUI/Frames/PausePopup
   - GUI/Items/OpponentCharacterView
   - GUI/Items/PlayerCharacterView
   - Import/BalanceDocument
@@ -44,6 +46,7 @@ MonoBehaviour:
   - Languages/Russian
   - Layers/DefaultLayer
   - Layers/MainLayer
+  - Layers/PopupLayer
   - MainScene
   - Mechanics/AttackMechanic
   - Mechanics/DefenceMechanic

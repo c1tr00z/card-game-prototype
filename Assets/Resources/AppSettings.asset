@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa684c17ed7a71a408bf2fbcb9409929, type: 3}
   m_Name: AppSettings
   m_EditorClassIdentifier: 
-  _startScene: {fileID: 11400000, guid: 970fe7d92b629b04b935468a02824eed, type: 2}
+  _startScene: {fileID: 11400000, guid: 39788db1dab2ee248a017bbc96f1601a, type: 2}
   _startFrame: {fileID: 0}
