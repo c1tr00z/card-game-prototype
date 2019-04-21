@@ -30,3 +30,9 @@ MonoBehaviour:
     chance: 0.5
   - card: {fileID: 11400000, guid: 33834fc9f5d53934491708f884cce3a4, type: 2}
     chance: 0.3
+  - card: {fileID: 11400000, guid: 3db4ad2c5ad12c348b6f7eee77860ec8, type: 2}
+    chance: 0.8
+  - card: {fileID: 11400000, guid: 6d681c8e502c0ec4e8c274a44934cbc5, type: 2}
+    chance: 0.5
+  - card: {fileID: 11400000, guid: 17cd7d501b9e9874884d275b5f1d17dc, type: 2}
+    chance: 0.2
