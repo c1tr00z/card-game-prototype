@@ -51,11 +51,9 @@ namespace c1tr00z.CardPrototype.Cards.GUI {
             if (iconItem != null) {
                 _cardIcon.sprite = iconItem.sprite;
             }
-
-            var cardTextString = "";
-            card.dbEntry.mechanics.ForEach(m => cardTextString += (m.description + ";\r\n"));
-            _back.color = card.dbEntry.mechanics.MaxElement(m => m.param).mechanic.color;
-            _cardText.text = cardTextString;
+            
+            _back.color = card.GetColor();
+            _cardText.text = card.GetText();
         }
 
         public void Play() {
