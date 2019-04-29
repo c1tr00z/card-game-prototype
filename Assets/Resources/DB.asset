@@ -31,8 +31,10 @@ MonoBehaviour:
   - DB
   - Documents/Localization
   - Documents/Pages/LocalizationPageCards
+  - Documents/Pages/LocalizationPageCharacters
   - Documents/Pages/LocalizationPageGUI
   - Documents/Pages/LocalizationPageMechanics
+  - Documents/Pages/LocalizationPageOthers
   - GameScene
   - GUI/Frames/BattleEndFrame
   - GUI/Frames/BattleFrame
@@ -58,6 +60,7 @@ MonoBehaviour:
   - Modules/Saves/SaveToTXTFile
   - Modules/Scenes
   - Modules/UI
+  - New DBEntry
   - OpponentCharacter
   - OpponentCharacter@Deck
   - PlayerCharacter

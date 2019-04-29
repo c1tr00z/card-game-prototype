@@ -11,15 +11,10 @@ namespace c1tr00z.CardPrototype.Battle.GUI {
 
             var winner = BattleController.instance.characters.Where(c => !c.died).First();
 
-            _winnerText.text = string.Format("<color=#{0}>{1}</color> is Win!", ColorUtility.ToHtmlStringRGB(winner.dbEntry.color), winner.dbEntry.characterPlayerName);
+            _winnerText.text = Localization.LocalizationKeys.WinLine(winner);
         }
 
         public void Finish() {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
         }
     }
 }

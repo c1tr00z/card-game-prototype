@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c138569b285d64da9e117bb6c1a7ca, type: 3}
   m_Name: BattleEndFrame
   m_EditorClassIdentifier: 
+  _layer: {fileID: 11400000, guid: d3340d98136305c43baa0453991b2eef, type: 2}
